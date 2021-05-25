@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/The Great Fleece/Game/_Scenes/Learning/Environment_Start.unity
+- path: Assets/The Great Fleece/Game/_Scenes/Main.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
