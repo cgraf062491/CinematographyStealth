@@ -929,8 +929,8 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: -785947909146820298}
   - {fileID: 1681322342428685056}
-  - {fileID: -6699774580481257761}
   - {fileID: 6225147814869824527}
+  - {fileID: -6699774580481257761}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
