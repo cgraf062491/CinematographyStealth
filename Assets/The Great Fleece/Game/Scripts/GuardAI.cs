@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class GuardAI : MonoBehaviour
 {
 	public List<Transform> wayPoints;
-	private NavMeshAgent _agent;
-	private Animator _anim;
+	public NavMeshAgent _agent;
+	public Animator _anim;
 	[SerializeField] private int currentTarget = 0;
 	private float dist;
 	private bool reverse = false;
 	private bool targetReached = false;
+    public bool coinTossed;
+    public Vector3 coinPos;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if(wayPoints.Count > 0 && wayPoints[currentTarget] != null)
+    	if(wayPoints.Count > 0 && wayPoints[currentTarget] != null && coinTossed == false)
     	{
     		_agent.SetDestination(wayPoints[currentTarget].position);
 
@@ -35,6 +37,14 @@ public class GuardAI : MonoBehaviour
     			StartCoroutine(WaitBeforeMoving());
     		}
     	}
+        else if(coinTossed == true)
+        {
+            float dist = Vector3.Distance(transform.position, coinPos);
+            if(dist < 4.0f)
+            {
+                _anim.SetBool("Walking", false);
+            }
+        }
     }
 
     IEnumerator WaitBeforeMoving()
