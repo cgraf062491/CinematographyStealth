@@ -16,7 +16,8 @@ public class VoiceOverTrigger : MonoBehaviour
     {
     	if(other.CompareTag("Player"))
     	{
-    		_audio.PlayOneShot(_triggerDialogue);
+    		//_audio.PlayOneShot(_triggerDialogue);
+            AudioManager.Instance.PlayVoiceOver(_triggerDialogue);
     	}
     }
 }

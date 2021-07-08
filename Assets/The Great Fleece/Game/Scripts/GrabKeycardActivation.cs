@@ -12,6 +12,7 @@ public class GrabKeycardActivation : MonoBehaviour
     	if(other.CompareTag("Player"))
     	{
     		_grabCardCutscene.SetActive(true);
+    		GameManager.Instance.HasCard = true;
     	}
     }
 }
